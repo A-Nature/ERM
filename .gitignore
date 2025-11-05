@@ -1,106 +1,48 @@
-# Visual Studio 2015/2017/2019/2022 cache/options
+# Visual Studio
 .vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-
-# Unreal Engine cache and intermediate files
+# Unreal Engine - DO NOT track these
 Binaries/
 Build/
 DerivedDataCache/
 Intermediate/
 Saved/
 *.sln
-*.suo
-*.opensdf
-*.sdf
-*.VC.db
-*.VC.opendb
-
-# Unreal Engine generated files
-*.VC.opendb
-*.VC.db
-*.VC.VC.opendb
 .vscode/
 .idea/
+*.VC.db
+*.VC.opendb
 
-# Rider
-.idea/
-*.sln.iml
-
-# User-specific files
-*.suo
-*.user
-*.sln.docstates
-*.userprefs
-
-# Compiled Object files
-*.slo
-*.lo
+# Compiled files - DO NOT track
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 *.lib
-
-# Executables
+*.dll
 *.exe
-*.out
-*.app
+*.pdb
 
-# Starter Content (optional - uncomment if you don't need it tracked)
-# Content/StarterContent/
-
-# Marketplace Content (optional - don't track if using Marketplace assets)
-# Content/[MarketplacePluginName]/
-
-# Large files (typically)
-#*.uasset
-#*.umap
-
-# OS generated files
+# OS files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
 # Crash reports
 CrashReportClient/
 
-# Cache files
-*.tmp
+# DO TRACK CONTENT - Remove these exclusions!
+# We NEED to track .uasset and .umap for level design
+
+# Optional: Exclude starter content if not needed
+# Content/StarterContent/
+
+# Optional: Exclude specific marketplace content
+# Content/MarketplaceFolderName/
+
+# Exclude user-specific settings
+Saved/Config/Windows*/
+
+# Build artifacts
 *_BuiltData.uasset
