@@ -33,7 +33,7 @@ Thumbs.db
 CrashReportClient/
 
 # DO TRACK CONTENT - Remove these exclusions!
-# We NEED to track .uasset and .umap for level design
+# We NEED to track .uasset and .umap for level designs
 
 # Optional: Exclude starter content if not needed
 # Content/StarterContent/
