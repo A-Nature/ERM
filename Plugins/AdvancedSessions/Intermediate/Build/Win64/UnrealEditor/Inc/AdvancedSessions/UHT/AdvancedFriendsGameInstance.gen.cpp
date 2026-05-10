@@ -366,6 +366,26 @@ struct Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics
 		{ "Category", "AdvancedVoiceInterface" },
 		{ "ModuleRelativePath", "Classes/AdvancedFriendsGameInstance.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_MetaData[] = {
+		{ "Category", "AdvancedFriendsInterface" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// If true we will auto join a session we have accepted in the overlay.\n// This can get in the way of Beacon Sessions, you may want to disable it.\n" },
+#endif
+		{ "ModuleRelativePath", "Classes/AdvancedFriendsGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "If true we will auto join a session we have accepted in the overlay.\nThis can get in the way of Beacon Sessions, you may want to disable it." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bAutoTravelOnAcceptedUserInviteReceived_MetaData[] = {
+		{ "Category", "AdvancedFriendsInterface" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// If true we will auto travel to a game session when an invite is received.\n// This can get in the way of Beacon Sessions, you may want to disable it.\n" },
+#endif
+		{ "ModuleRelativePath", "Classes/AdvancedFriendsGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "If true we will auto travel to a game session when an invite is received.\nThis can get in the way of Beacon Sessions, you may want to disable it." },
+#endif
+	};
 #endif // WITH_METADATA
 	static void NewProp_bCallFriendInterfaceEventsOnPlayerControllers_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bCallFriendInterfaceEventsOnPlayerControllers;
@@ -375,6 +395,10 @@ struct Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bCallVoiceInterfaceEventsOnPlayerControllers;
 	static void NewProp_bEnableTalkingStatusDelegate_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bEnableTalkingStatusDelegate;
+	static void NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived;
+	static void NewProp_bAutoTravelOnAcceptedUserInviteReceived_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAutoTravelOnAcceptedUserInviteReceived;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -410,11 +434,23 @@ void Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bEnableTal
 	((UAdvancedFriendsGameInstance*)Obj)->bEnableTalkingStatusDelegate = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bEnableTalkingStatusDelegate = { "bEnableTalkingStatusDelegate", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UAdvancedFriendsGameInstance), &Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bEnableTalkingStatusDelegate_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bEnableTalkingStatusDelegate_MetaData), NewProp_bEnableTalkingStatusDelegate_MetaData) };
+void Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_SetBit(void* Obj)
+{
+	((UAdvancedFriendsGameInstance*)Obj)->bAutoJoinSessionOnAcceptedUserInviteReceived = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived = { "bAutoJoinSessionOnAcceptedUserInviteReceived", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UAdvancedFriendsGameInstance), &Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_MetaData), NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived_MetaData) };
+void Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoTravelOnAcceptedUserInviteReceived_SetBit(void* Obj)
+{
+	((UAdvancedFriendsGameInstance*)Obj)->bAutoTravelOnAcceptedUserInviteReceived = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoTravelOnAcceptedUserInviteReceived = { "bAutoTravelOnAcceptedUserInviteReceived", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UAdvancedFriendsGameInstance), &Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoTravelOnAcceptedUserInviteReceived_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bAutoTravelOnAcceptedUserInviteReceived_MetaData), NewProp_bAutoTravelOnAcceptedUserInviteReceived_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bCallFriendInterfaceEventsOnPlayerControllers,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bCallIdentityInterfaceEventsOnPlayerControllers,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bCallVoiceInterfaceEventsOnPlayerControllers,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bEnableTalkingStatusDelegate,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoJoinSessionOnAcceptedUserInviteReceived,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::NewProp_bAutoTravelOnAcceptedUserInviteReceived,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UAdvancedFriendsGameInstance_Statics::DependentSingletons[])() = {
@@ -457,10 +493,10 @@ UAdvancedFriendsGameInstance::~UAdvancedFriendsGameInstance() {}
 struct Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedFriendsGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UAdvancedFriendsGameInstance, UAdvancedFriendsGameInstance::StaticClass, TEXT("UAdvancedFriendsGameInstance"), &Z_Registration_Info_UClass_UAdvancedFriendsGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAdvancedFriendsGameInstance), 2567639411U) },
+		{ Z_Construct_UClass_UAdvancedFriendsGameInstance, UAdvancedFriendsGameInstance::StaticClass, TEXT("UAdvancedFriendsGameInstance"), &Z_Registration_Info_UClass_UAdvancedFriendsGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAdvancedFriendsGameInstance), 1472812729U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedFriendsGameInstance_h_3559413466(TEXT("/Script/AdvancedSessions"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedFriendsGameInstance_h_8756633(TEXT("/Script/AdvancedSessions"),
 	Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedFriendsGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedFriendsGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

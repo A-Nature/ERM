@@ -38,6 +38,7 @@ struct FUniqueNetIdRepl;
 	DECLARE_FUNCTION(execEqualEqual_UNetIDUnetID); \
 	DECLARE_FUNCTION(execIsValidUniqueNetID); \
 	DECLARE_FUNCTION(execGetUniqueNetIDFromPlayerState); \
+	DECLARE_FUNCTION(execGetUniqueNetIdOfSessionOwner); \
 	DECLARE_FUNCTION(execGetUniqueNetID); \
 	DECLARE_FUNCTION(execMakeLiteralSessionPropertyFloat); \
 	DECLARE_FUNCTION(execMakeLiteralSessionPropertyInt); \

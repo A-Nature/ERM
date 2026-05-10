@@ -34,7 +34,6 @@ struct Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedS
 		bool bUseLAN;
 		bool bAllowInvites;
 		bool bIsDedicatedServer;
-		bool bUsePresence;
 		bool bUseLobbiesIfAvailable;
 		bool bAllowJoinViaPresence;
 		bool bAllowJoinViaPresenceFriendsOnly;
@@ -51,7 +50,7 @@ struct Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedS
 		{ "BlueprintInternalUseOnly", "true" },
 		{ "Category", "Online|AdvancedSessions" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n\x09 *    Creates a session with the default online subsystem with advanced optional inputs, for dedicated servers leave UsePresence as false and set IsDedicatedServer to true. Dedicated servers don't use presence.\n\x09 *    @param PublicConnections\x09When doing a 'listen' server, this must be >=2 (ListenServer itself counts as a connection)\n\x09 *    @param bUseLAN\x09\x09\x09When you want to play LAN, the level to play on must be loaded with option 'bIsLanMatch'\n\x09 *    @param bUsePresence\x09\x09Must be true for a 'listen' server (Map must be loaded with option 'listen'), false for a 'dedicated' server.\n\x09 *\x09  @param bUseLobbiesIfAvailable Used to flag the subsystem to use a lobby api instead of general hosting if the API supports it, generally true on steam for listen servers and false for dedicated\n\x09 *\x09  @param bShouldAdvertise\x09Set to true when the OnlineSubsystem should list your server when someone is searching for servers. Otherwise the server is hidden and only join via invite is possible.\n\x09 *\x09  @param bUseLobbiesVoiceChatIfAvailable Set to true to setup voice chat lobbies if the API supports it\n\x09 * \x09  @param bStartAfterCreate Set to true to start the session after it's created. If false you need to manually call StartSession when ready.\n\x09 */" },
+		{ "Comment", "/*bool bUsePresence = true,*/" },
 #endif
 		{ "CPP_Default_bAllowInvites", "true" },
 		{ "CPP_Default_bAllowJoinViaPresence", "true" },
@@ -63,14 +62,13 @@ struct Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedS
 		{ "CPP_Default_bUseLAN", "false" },
 		{ "CPP_Default_bUseLobbiesIfAvailable", "true" },
 		{ "CPP_Default_bUseLobbiesVoiceChatIfAvailable", "false" },
-		{ "CPP_Default_bUsePresence", "true" },
 		{ "CPP_Default_bUsesStats", "false" },
 		{ "CPP_Default_PlayerController", "None" },
 		{ "CPP_Default_PrivateConnections", "0" },
 		{ "CPP_Default_PublicConnections", "100" },
 		{ "ModuleRelativePath", "Classes/CreateSessionCallbackProxyAdvanced.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Creates a session with the default online subsystem with advanced optional inputs, for dedicated servers leave UsePresence as false and set IsDedicatedServer to true. Dedicated servers don't use presence.\n@param PublicConnections  When doing a 'listen' server, this must be >=2 (ListenServer itself counts as a connection)\n@param bUseLAN                    When you want to play LAN, the level to play on must be loaded with option 'bIsLanMatch'\n@param bUsePresence               Must be true for a 'listen' server (Map must be loaded with option 'listen'), false for a 'dedicated' server.\n    @param bUseLobbiesIfAvailable Used to flag the subsystem to use a lobby api instead of general hosting if the API supports it, generally true on steam for listen servers and false for dedicated\n    @param bShouldAdvertise       Set to true when the OnlineSubsystem should list your server when someone is searching for servers. Otherwise the server is hidden and only join via invite is possible.\n    @param bUseLobbiesVoiceChatIfAvailable Set to true to setup voice chat lobbies if the API supports it\n    @param bStartAfterCreate Set to true to start the session after it's created. If false you need to manually call StartSession when ready." },
+		{ "ToolTip", "bool bUsePresence = true," },
 #endif
 		{ "WorldContext", "WorldContextObject" },
 	};
@@ -90,8 +88,6 @@ struct Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedS
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAllowInvites;
 	static void NewProp_bIsDedicatedServer_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDedicatedServer;
-	static void NewProp_bUsePresence_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_bUsePresence;
 	static void NewProp_bUseLobbiesIfAvailable_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bUseLobbiesIfAvailable;
 	static void NewProp_bAllowJoinViaPresence_SetBit(void* Obj);
@@ -133,11 +129,6 @@ void Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSes
 	((CreateSessionCallbackProxyAdvanced_eventCreateAdvancedSession_Parms*)Obj)->bIsDedicatedServer = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bIsDedicatedServer = { "bIsDedicatedServer", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(CreateSessionCallbackProxyAdvanced_eventCreateAdvancedSession_Parms), &Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bIsDedicatedServer_SetBit, METADATA_PARAMS(0, nullptr) };
-void Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUsePresence_SetBit(void* Obj)
-{
-	((CreateSessionCallbackProxyAdvanced_eventCreateAdvancedSession_Parms*)Obj)->bUsePresence = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUsePresence = { "bUsePresence", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(CreateSessionCallbackProxyAdvanced_eventCreateAdvancedSession_Parms), &Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUsePresence_SetBit, METADATA_PARAMS(0, nullptr) };
 void Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUseLobbiesIfAvailable_SetBit(void* Obj)
 {
 	((CreateSessionCallbackProxyAdvanced_eventCreateAdvancedSession_Parms*)Obj)->bUseLobbiesIfAvailable = 1;
@@ -189,7 +180,6 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCreat
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUseLAN,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bAllowInvites,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bIsDedicatedServer,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUsePresence,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bUseLobbiesIfAvailable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bAllowJoinViaPresence,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession_Statics::NewProp_bAllowJoinViaPresenceFriendsOnly,
@@ -222,7 +212,6 @@ DEFINE_FUNCTION(UCreateSessionCallbackProxyAdvanced::execCreateAdvancedSession)
 	P_GET_UBOOL(Z_Param_bUseLAN);
 	P_GET_UBOOL(Z_Param_bAllowInvites);
 	P_GET_UBOOL(Z_Param_bIsDedicatedServer);
-	P_GET_UBOOL(Z_Param_bUsePresence);
 	P_GET_UBOOL(Z_Param_bUseLobbiesIfAvailable);
 	P_GET_UBOOL(Z_Param_bAllowJoinViaPresence);
 	P_GET_UBOOL(Z_Param_bAllowJoinViaPresenceFriendsOnly);
@@ -233,7 +222,7 @@ DEFINE_FUNCTION(UCreateSessionCallbackProxyAdvanced::execCreateAdvancedSession)
 	P_GET_UBOOL(Z_Param_bStartAfterCreate);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(UCreateSessionCallbackProxyAdvanced**)Z_Param__Result=UCreateSessionCallbackProxyAdvanced::CreateAdvancedSession(Z_Param_WorldContextObject,Z_Param_Out_ExtraSettings,Z_Param_PlayerController,Z_Param_PublicConnections,Z_Param_PrivateConnections,Z_Param_bUseLAN,Z_Param_bAllowInvites,Z_Param_bIsDedicatedServer,Z_Param_bUsePresence,Z_Param_bUseLobbiesIfAvailable,Z_Param_bAllowJoinViaPresence,Z_Param_bAllowJoinViaPresenceFriendsOnly,Z_Param_bAntiCheatProtected,Z_Param_bUsesStats,Z_Param_bShouldAdvertise,Z_Param_bUseLobbiesVoiceChatIfAvailable,Z_Param_bStartAfterCreate);
+	*(UCreateSessionCallbackProxyAdvanced**)Z_Param__Result=UCreateSessionCallbackProxyAdvanced::CreateAdvancedSession(Z_Param_WorldContextObject,Z_Param_Out_ExtraSettings,Z_Param_PlayerController,Z_Param_PublicConnections,Z_Param_PrivateConnections,Z_Param_bUseLAN,Z_Param_bAllowInvites,Z_Param_bIsDedicatedServer,Z_Param_bUseLobbiesIfAvailable,Z_Param_bAllowJoinViaPresence,Z_Param_bAllowJoinViaPresenceFriendsOnly,Z_Param_bAntiCheatProtected,Z_Param_bUsesStats,Z_Param_bShouldAdvertise,Z_Param_bUseLobbiesVoiceChatIfAvailable,Z_Param_bStartAfterCreate);
 	P_NATIVE_END;
 }
 // End Class UCreateSessionCallbackProxyAdvanced Function CreateAdvancedSession
@@ -283,7 +272,7 @@ struct Z_Construct_UClass_UCreateSessionCallbackProxyAdvanced_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession, "CreateAdvancedSession" }, // 1337837868
+		{ &Z_Construct_UFunction_UCreateSessionCallbackProxyAdvanced_CreateAdvancedSession, "CreateAdvancedSession" }, // 1742533323
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -338,10 +327,10 @@ UCreateSessionCallbackProxyAdvanced::~UCreateSessionCallbackProxyAdvanced() {}
 struct Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_CreateSessionCallbackProxyAdvanced_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCreateSessionCallbackProxyAdvanced, UCreateSessionCallbackProxyAdvanced::StaticClass, TEXT("UCreateSessionCallbackProxyAdvanced"), &Z_Registration_Info_UClass_UCreateSessionCallbackProxyAdvanced, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCreateSessionCallbackProxyAdvanced), 2600826066U) },
+		{ Z_Construct_UClass_UCreateSessionCallbackProxyAdvanced, UCreateSessionCallbackProxyAdvanced::StaticClass, TEXT("UCreateSessionCallbackProxyAdvanced"), &Z_Registration_Info_UClass_UCreateSessionCallbackProxyAdvanced, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCreateSessionCallbackProxyAdvanced), 3825131017U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_CreateSessionCallbackProxyAdvanced_h_2436892313(TEXT("/Script/AdvancedSessions"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_CreateSessionCallbackProxyAdvanced_h_3335289190(TEXT("/Script/AdvancedSessions"),
 	Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_CreateSessionCallbackProxyAdvanced_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_CreateSessionCallbackProxyAdvanced_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -1613,6 +1613,60 @@ DEFINE_FUNCTION(UAdvancedSessionsLibrary::execGetUniqueNetIDFromPlayerState)
 }
 // End Class UAdvancedSessionsLibrary Function GetUniqueNetIDFromPlayerState
 
+// Begin Class UAdvancedSessionsLibrary Function GetUniqueNetIdOfSessionOwner
+struct Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics
+{
+	struct AdvancedSessionsLibrary_eventGetUniqueNetIdOfSessionOwner_Parms
+	{
+		FBlueprintSessionResult SessionResult;
+		FBPUniqueNetId UniqueNetId;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Online|AdvancedSessions|PlayerInfo|PlayerID" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Get the unique net id of a network player attached to the given controller\n" },
+#endif
+		{ "ModuleRelativePath", "Classes/AdvancedSessionsLibrary.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Get the unique net id of a network player attached to the given controller" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SessionResult;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_UniqueNetId;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::NewProp_SessionResult = { "SessionResult", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AdvancedSessionsLibrary_eventGetUniqueNetIdOfSessionOwner_Parms, SessionResult), Z_Construct_UScriptStruct_FBlueprintSessionResult, METADATA_PARAMS(0, nullptr) }; // 1307808723
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::NewProp_UniqueNetId = { "UniqueNetId", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AdvancedSessionsLibrary_eventGetUniqueNetIdOfSessionOwner_Parms, UniqueNetId), Z_Construct_UScriptStruct_FBPUniqueNetId, METADATA_PARAMS(0, nullptr) }; // 700456651
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::NewProp_SessionResult,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::NewProp_UniqueNetId,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UAdvancedSessionsLibrary, nullptr, "GetUniqueNetIdOfSessionOwner", nullptr, nullptr, Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::PropPointers), sizeof(Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::AdvancedSessionsLibrary_eventGetUniqueNetIdOfSessionOwner_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::Function_MetaDataParams), Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::AdvancedSessionsLibrary_eventGetUniqueNetIdOfSessionOwner_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UAdvancedSessionsLibrary::execGetUniqueNetIdOfSessionOwner)
+{
+	P_GET_STRUCT(FBlueprintSessionResult,Z_Param_SessionResult);
+	P_GET_STRUCT_REF(FBPUniqueNetId,Z_Param_Out_UniqueNetId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	UAdvancedSessionsLibrary::GetUniqueNetIdOfSessionOwner(Z_Param_SessionResult,Z_Param_Out_UniqueNetId);
+	P_NATIVE_END;
+}
+// End Class UAdvancedSessionsLibrary Function GetUniqueNetIdOfSessionOwner
+
 // Begin Class UAdvancedSessionsLibrary Function HasOnlineSubsystem
 struct Z_Construct_UFunction_UAdvancedSessionsLibrary_HasOnlineSubsystem_Statics
 {
@@ -2514,6 +2568,7 @@ void UAdvancedSessionsLibrary::StaticRegisterNativesUAdvancedSessionsLibrary()
 		{ "GetUniqueBuildID", &UAdvancedSessionsLibrary::execGetUniqueBuildID },
 		{ "GetUniqueNetID", &UAdvancedSessionsLibrary::execGetUniqueNetID },
 		{ "GetUniqueNetIDFromPlayerState", &UAdvancedSessionsLibrary::execGetUniqueNetIDFromPlayerState },
+		{ "GetUniqueNetIdOfSessionOwner", &UAdvancedSessionsLibrary::execGetUniqueNetIdOfSessionOwner },
 		{ "HasOnlineSubsystem", &UAdvancedSessionsLibrary::execHasOnlineSubsystem },
 		{ "IsPlayerInSession", &UAdvancedSessionsLibrary::execIsPlayerInSession },
 		{ "IsValidSession", &UAdvancedSessionsLibrary::execIsValidSession },
@@ -2570,6 +2625,7 @@ struct Z_Construct_UClass_UAdvancedSessionsLibrary_Statics
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueBuildID, "GetUniqueBuildID" }, // 4021627990
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetID, "GetUniqueNetID" }, // 303639147
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIDFromPlayerState, "GetUniqueNetIDFromPlayerState" }, // 3354004582
+		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_GetUniqueNetIdOfSessionOwner, "GetUniqueNetIdOfSessionOwner" }, // 2740306038
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_HasOnlineSubsystem, "HasOnlineSubsystem" }, // 4232738578
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_IsPlayerInSession, "IsPlayerInSession" }, // 2155517989
 		{ &Z_Construct_UFunction_UAdvancedSessionsLibrary_IsValidSession, "IsValidSession" }, // 1341791316
@@ -2632,10 +2688,10 @@ UAdvancedSessionsLibrary::~UAdvancedSessionsLibrary() {}
 struct Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedSessionsLibrary_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UAdvancedSessionsLibrary, UAdvancedSessionsLibrary::StaticClass, TEXT("UAdvancedSessionsLibrary"), &Z_Registration_Info_UClass_UAdvancedSessionsLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAdvancedSessionsLibrary), 2946818799U) },
+		{ Z_Construct_UClass_UAdvancedSessionsLibrary, UAdvancedSessionsLibrary::StaticClass, TEXT("UAdvancedSessionsLibrary"), &Z_Registration_Info_UClass_UAdvancedSessionsLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAdvancedSessionsLibrary), 3535655645U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedSessionsLibrary_h_3631478302(TEXT("/Script/AdvancedSessions"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedSessionsLibrary_h_3335545007(TEXT("/Script/AdvancedSessions"),
 	Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedSessionsLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_AdvancedSessionsLibrary_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

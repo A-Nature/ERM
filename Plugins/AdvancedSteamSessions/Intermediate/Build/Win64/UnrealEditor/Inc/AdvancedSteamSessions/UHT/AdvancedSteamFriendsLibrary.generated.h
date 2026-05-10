@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
 class UTexture2D;
 enum class EBlueprintAsyncResultSwitch : uint8;
 enum class EBlueprintResultSwitch : uint8;

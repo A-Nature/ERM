@@ -35,6 +35,8 @@ struct Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_S
 		bool bRefreshOnlineData;
 		bool bIsDedicatedServer;
 		bool bShouldAdvertise;
+		bool bAllowJoinViaPresence;
+		bool bAllowJoinViaPresenceFriendsOnly;
 		UUpdateSessionCallbackProxyAdvanced* ReturnValue;
 	};
 #if WITH_METADATA
@@ -47,6 +49,8 @@ struct Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_S
 #endif
 		{ "CPP_Default_bAllowInvites", "false" },
 		{ "CPP_Default_bAllowJoinInProgress", "false" },
+		{ "CPP_Default_bAllowJoinViaPresence", "true" },
+		{ "CPP_Default_bAllowJoinViaPresenceFriendsOnly", "false" },
 		{ "CPP_Default_bIsDedicatedServer", "false" },
 		{ "CPP_Default_bRefreshOnlineData", "true" },
 		{ "CPP_Default_bShouldAdvertise", "true" },
@@ -80,6 +84,10 @@ struct Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_S
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDedicatedServer;
 	static void NewProp_bShouldAdvertise_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bShouldAdvertise;
+	static void NewProp_bAllowJoinViaPresence_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAllowJoinViaPresence;
+	static void NewProp_bAllowJoinViaPresenceFriendsOnly_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bAllowJoinViaPresenceFriendsOnly;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -119,6 +127,16 @@ void Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Sta
 	((UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms*)Obj)->bShouldAdvertise = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bShouldAdvertise = { "bShouldAdvertise", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms), &Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bShouldAdvertise_SetBit, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresence_SetBit(void* Obj)
+{
+	((UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms*)Obj)->bAllowJoinViaPresence = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresence = { "bAllowJoinViaPresence", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms), &Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresence_SetBit, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresenceFriendsOnly_SetBit(void* Obj)
+{
+	((UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms*)Obj)->bAllowJoinViaPresenceFriendsOnly = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresenceFriendsOnly = { "bAllowJoinViaPresenceFriendsOnly", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms), &Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresenceFriendsOnly_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UpdateSessionCallbackProxyAdvanced_eventUpdateSession_Parms, ReturnValue), Z_Construct_UClass_UUpdateSessionCallbackProxyAdvanced_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_WorldContextObject,
@@ -132,6 +150,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UUpdat
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bRefreshOnlineData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bIsDedicatedServer,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bShouldAdvertise,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresence,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_bAllowJoinViaPresenceFriendsOnly,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession_Statics::PropPointers) < 2048);
@@ -158,9 +178,11 @@ DEFINE_FUNCTION(UUpdateSessionCallbackProxyAdvanced::execUpdateSession)
 	P_GET_UBOOL(Z_Param_bRefreshOnlineData);
 	P_GET_UBOOL(Z_Param_bIsDedicatedServer);
 	P_GET_UBOOL(Z_Param_bShouldAdvertise);
+	P_GET_UBOOL(Z_Param_bAllowJoinViaPresence);
+	P_GET_UBOOL(Z_Param_bAllowJoinViaPresenceFriendsOnly);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(UUpdateSessionCallbackProxyAdvanced**)Z_Param__Result=UUpdateSessionCallbackProxyAdvanced::UpdateSession(Z_Param_WorldContextObject,Z_Param_Out_ExtraSettings,Z_Param_PublicConnections,Z_Param_PrivateConnections,Z_Param_bUseLAN,Z_Param_bAllowInvites,Z_Param_bAllowJoinInProgress,Z_Param_bRefreshOnlineData,Z_Param_bIsDedicatedServer,Z_Param_bShouldAdvertise);
+	*(UUpdateSessionCallbackProxyAdvanced**)Z_Param__Result=UUpdateSessionCallbackProxyAdvanced::UpdateSession(Z_Param_WorldContextObject,Z_Param_Out_ExtraSettings,Z_Param_PublicConnections,Z_Param_PrivateConnections,Z_Param_bUseLAN,Z_Param_bAllowInvites,Z_Param_bAllowJoinInProgress,Z_Param_bRefreshOnlineData,Z_Param_bIsDedicatedServer,Z_Param_bShouldAdvertise,Z_Param_bAllowJoinViaPresence,Z_Param_bAllowJoinViaPresenceFriendsOnly);
 	P_NATIVE_END;
 }
 // End Class UUpdateSessionCallbackProxyAdvanced Function UpdateSession
@@ -210,7 +232,7 @@ struct Z_Construct_UClass_UUpdateSessionCallbackProxyAdvanced_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession, "UpdateSession" }, // 693533942
+		{ &Z_Construct_UFunction_UUpdateSessionCallbackProxyAdvanced_UpdateSession, "UpdateSession" }, // 1763185933
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -265,10 +287,10 @@ UUpdateSessionCallbackProxyAdvanced::~UUpdateSessionCallbackProxyAdvanced() {}
 struct Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_UpdateSessionCallbackProxyAdvanced_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UUpdateSessionCallbackProxyAdvanced, UUpdateSessionCallbackProxyAdvanced::StaticClass, TEXT("UUpdateSessionCallbackProxyAdvanced"), &Z_Registration_Info_UClass_UUpdateSessionCallbackProxyAdvanced, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUpdateSessionCallbackProxyAdvanced), 1438092662U) },
+		{ Z_Construct_UClass_UUpdateSessionCallbackProxyAdvanced, UUpdateSessionCallbackProxyAdvanced::StaticClass, TEXT("UUpdateSessionCallbackProxyAdvanced"), &Z_Registration_Info_UClass_UUpdateSessionCallbackProxyAdvanced, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUpdateSessionCallbackProxyAdvanced), 2018755745U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_UpdateSessionCallbackProxyAdvanced_h_2494294247(TEXT("/Script/AdvancedSessions"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_UpdateSessionCallbackProxyAdvanced_h_3949233159(TEXT("/Script/AdvancedSessions"),
 	Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_UpdateSessionCallbackProxyAdvanced_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ERM_Plugins_AdvancedSessions_Source_AdvancedSessions_Classes_UpdateSessionCallbackProxyAdvanced_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
