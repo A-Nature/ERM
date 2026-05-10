@@ -11,6 +11,9 @@ Build/
 DerivedDataCache/
 Intermediate/
 Saved/
+Plugins/AdvancedSessions/Binaries/
+Plugins/AdvancedSteamSessions/Binaries/
+
 *.sln
 .vscode/
 .idea/
