@@ -1,2 +1,2 @@
 # ERM
-Game ERM by Deeply Lucid Studios.
+Game ERM.
